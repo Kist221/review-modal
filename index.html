@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Review Modal Boilerplate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="js/vex.combined.min.js"></script>
+    <script>
+        vex.defaultOptions.className = 'vex-theme-default'
+    </script>
+    <link rel="stylesheet" href="css/vex.css" />
+    <link rel="stylesheet" href="css/vex-theme-default.css" />
+</head>
+
+<body>
+    <h1>Starting out...</h1>
+    need a button
+    <script>
+        vex.dialog.buttons.YES.text = 'Okiedokie'
+        vex.dialog.buttons.NO.text = 'Aahw hell no'
+
+        todayDateString = new Date().toJSON().slice(0, 10)
+        vex.dialog.open({
+            message: 'Select a date and color.',
+            input: [
+                '<style>',
+                '.vex-custom-field-wrapper {',
+                'margin: 1em 0;',
+                '}',
+                '.vex-custom-field-wrapper > label {',
+                'display: inline-block;',
+                'margin-bottom: .2em;',
+                '}',
+                '</style>',
+                '<div class="vex-custom-field-wrapper">',
+                '<label for="date">Date</label>',
+                '<div class="vex-custom-input-wrapper">',
+                '<input name="date" type="date" value="' + todayDateString + '" />',
+                '</div>',
+                '</div>',
+                '<div class="vex-custom-field-wrapper">',
+                '<label for="color">Color</label>',
+                '<div class="vex-custom-input-wrapper">',
+                '<input name="color" type="color" value="#ff00cc" />',
+                '</div>',
+                '</div>'
+            ].join(''),
+            callback: function (data) {
+                if (!data) {
+                    return console.log('Cancelled')
+                }
+                console.log('Date', data.date, 'Color', data.color)
+                $('.demo-result-custom-vex-dialog').show().html([
+                    '<h4>Result</h4>',
+                    '<p>',
+                    'Date: <b>' + data.date + '</b><br/>',
+                    'Color: <input type="color" value="' + data.color + '" readonly />',
+                    '</p>'
+                ].join(''))
+            }
+        })
+    </script>
+</body>
+
+</html>
