@@ -9,14 +9,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
     <script src="js/vex.combined.min.js"></script>
-    <script>
-        vex.defaultOptions.className = 'vex-theme-default'
-    </script>
     <link rel="stylesheet" href="css/vex.css" />
     <link rel="stylesheet" href="css/vex-theme-default.css" />
     <style>
-        h2, p {
+        h2,
+        h4,
+        p {
             text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: red;
         }
 
         .ratingBtn {
@@ -33,7 +37,9 @@
             Click Me
         </button>
     </div>
-    <script>
+    <script defer>
+        vex.defaultOptions.className = 'vex-theme-default'
+
         function openModal() {
             vex.open({
                 unsafeContent: ['<h2>',
@@ -51,8 +57,11 @@
         function chooseSchool() {
             vex.open({
                 unsafeContent: ['<h2>',
-                    "We'd love to hear your experience! What Rose location did you attend most recently?",
+                    "We'd love to hear your experience!",
                     '</h2>',
+                    '<h4>',
+                    'Which Rose location did you attend most recently?',
+                    '</h4>',
                     '<p class="schoolOpt" id="CRA"><a href="https://tinyurl.com/canyonrose" target="_blank" rel="noopener">Canyon Rose</a></p>',
                     '<p class="schoolOpt" id="CRAE"><a href="https://tinyurl.com/canyonroseeast" target="_blank" rel="noopener">Canyon Rose East</a></p>',
                     '<p class="schoolOpt" id="DRA"><a href="https://tinyurl.com/desertroseaz" target="_blank" rel="noopener">Desert Rose</a></p>',
@@ -63,14 +72,13 @@
         }
 
         $('body').on('click', '#clickMe', openModal);
-        
+
         function alert() {
             console.log(this.id);
         }
 
         $('body').on('click', '#nope', alert);
         $('body').on('click', '#yup', chooseSchool);
-
     </script>
 </body>
 
