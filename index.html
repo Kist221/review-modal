@@ -37,7 +37,7 @@
         function openModal() {
             vex.open({
                 unsafeContent: ['<h2>',
-                    'How has your experience been with "COMPANY"?',
+                    'How has your experience been with Rose Academies?',
                     '</h2>',
                     '<br />',
                     '<p>',
@@ -49,17 +49,15 @@
         };
 
         function chooseSchool() {
-            // TODO:
-            // open modal asking which school to return correct URL
             vex.open({
                 unsafeContent: ['<h2>',
-                    'What Rose location did you attend most recently?',
+                    "We'd love to hear your experience! What Rose location did you attend most recently?",
                     '</h2>',
-                    '<p class="schoolOpt" id="CRA"><a href="https://go2rose.com" target="_blank" rel="noopener">Canyon Rose</a></p>',
-                    '<p class="schoolOpt" id="CRAE"><a href="https://go2rose.com" target="_blank" rel="noopener">Canyon Rose East</a></p>',
-                    '<p class="schoolOpt" id="CRA"><a href="https://go2rose.com" target="_blank" rel="noopener">Desert Rose</a></p>',
-                    '<p class="schoolOpt" id="CRAE"><a href="https://go2rose.com" target="_blank" rel="noopener">Mountain Rose </a></p>',
-                    '<p class="schoolOpt" id="CRA"><a href="https://go2rose.com" target="_blank" rel="noopener">Pima Rose</a></p>'
+                    '<p class="schoolOpt" id="CRA"><a href="https://tinyurl.com/canyonrose" target="_blank" rel="noopener">Canyon Rose</a></p>',
+                    '<p class="schoolOpt" id="CRAE"><a href="https://tinyurl.com/canyonroseeast" target="_blank" rel="noopener">Canyon Rose East</a></p>',
+                    '<p class="schoolOpt" id="DRA"><a href="https://tinyurl.com/desertroseaz" target="_blank" rel="noopener">Desert Rose</a></p>',
+                    '<p class="schoolOpt" id="MRA"><a href="https://tinyurl.com/mountainroseaz" target="_blank" rel="noopener">Mountain Rose </a></p>',
+                    '<p class="schoolOpt" id="PRA"><a href="https://tinyurl.com/pimarose" target="_blank" rel="noopener">Pima Rose</a></p>'
                 ].join('')
             });
         }
