@@ -1,0 +1,13 @@
+.roseModal {
+    text-align: center;
+}
+
+.roseModal .schoolOpt a {
+    text-decoration: none;
+    color: red;
+}
+
+.roseModal .ratingBtn {
+    font-size: 75px;
+    margin: 10%;
+}
