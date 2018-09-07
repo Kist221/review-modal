@@ -14,6 +14,16 @@
     </script>
     <link rel="stylesheet" href="css/vex.css" />
     <link rel="stylesheet" href="css/vex-theme-default.css" />
+    <style>
+        h2, p {
+            text-align: center;
+        }
+
+        .ratingBtn {
+            font-size: 75px;
+            margin: 10%;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,23 +36,32 @@
     <script>
         function openModal() {
             vex.open({
-                unsafeContent: ['<div>',
-                    'Happy?',
-                    '</div>',
+                unsafeContent: ['<h2>',
+                    'How has your experience been with "COMPANY"?',
+                    '</h2>',
                     '<br />',
-                    '<div style="text-align: center;">',
-                    '<span style="font-size: 75px; margin: 10%;" id="nope">😑</span>',
-                    '<span style="font-size: 75px; margin: 10%;" id="yup">🤩</span>',
-                    '</div>'
-                ].join(''),
-                showCloseButton: true,
-                escapeButtonCloses: true,
-                overlayClosesOnClick: true
-            })
+                    '<p>',
+                    '<span class="ratingBtn" id="nope">😑</span>',
+                    '<span class="ratingBtn" id="yup">🤩</span>',
+                    '</p>'
+                ].join('')
+            });
         };
 
-        $('#clickMe').click(openModal);
+        function chooseSchool() {
+            // TODO:
+            // open modal asking which school to return correct URL
+        }
+
+        $('body').on('click', '#clickMe', openModal);
         
+        function alert() {
+            console.log(this);
+        }
+        
+        $('body').on('click', '#nope', alert);
+        $('body').on('click', '#yup', alert);
+
     </script>
 </body>
 
