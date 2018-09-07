@@ -76,7 +76,6 @@
 
         $('body').on('click', '#clickMe', openModal);
 
-        // TODO: replace this function with what you want negative feedback to do?
         function bad() {
             vex.closeAll();
             vex.open({
@@ -87,7 +86,7 @@
                     '<h4>',
                     'We are sorry to hear you had a bad experience. Would you be willingly to share your thoughts on how we can improve?',
                     '</h4>',
-                    '<p class="schoolOpt" id="callNow"><a tel="520.797.4884">Call Now</a></p>',
+                    '<p class="schoolOpt" id="callNow"><a href="tel:520.797.4884">Call Now</a></p>',
                     '<p class="schoolOpt" id="emailNow"><a href="mailto:contactus@rosemanagement.com">Message Us</a></p>',
                     '</div>'
                 ].join('')
