@@ -29,9 +29,9 @@
 <body>
     <h1>Starting out...</h1>
     <div>
-        <div id="clickMe">
-            Feedback Button
-        </div>
+        <button id="clickMe">
+            Click Me
+        </button>
     </div>
     <script>
         function openModal() {
@@ -51,16 +51,27 @@
         function chooseSchool() {
             // TODO:
             // open modal asking which school to return correct URL
+            vex.open({
+                unsafeContent: ['<h2>',
+                    'What Rose location did you attend most recently?',
+                    '</h2>',
+                    '<p class="schoolOpt" id="CRA"><a href="https://go2rose.com" target="_blank" rel="noopener">Canyon Rose</a></p>',
+                    '<p class="schoolOpt" id="CRAE"><a href="https://go2rose.com" target="_blank" rel="noopener">Canyon Rose East</a></p>',
+                    '<p class="schoolOpt" id="CRA"><a href="https://go2rose.com" target="_blank" rel="noopener">Desert Rose</a></p>',
+                    '<p class="schoolOpt" id="CRAE"><a href="https://go2rose.com" target="_blank" rel="noopener">Mountain Rose </a></p>',
+                    '<p class="schoolOpt" id="CRA"><a href="https://go2rose.com" target="_blank" rel="noopener">Pima Rose</a></p>'
+                ].join('')
+            });
         }
 
         $('body').on('click', '#clickMe', openModal);
         
         function alert() {
-            console.log(this);
+            console.log(this.id);
         }
-        
+
         $('body').on('click', '#nope', alert);
-        $('body').on('click', '#yup', alert);
+        $('body').on('click', '#yup', chooseSchool);
 
     </script>
 </body>
