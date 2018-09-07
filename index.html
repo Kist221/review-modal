@@ -12,18 +12,16 @@
     <link rel="stylesheet" href="css/vex.css" />
     <link rel="stylesheet" href="css/vex-theme-default.css" />
     <style>
-        h2,
-        h4,
-        p {
+        .roseModal {
             text-align: center;
         }
 
-        a {
+        .roseModal .schoolOpt a {
             text-decoration: none;
             color: red;
         }
 
-        .ratingBtn {
+        .roseModal .ratingBtn {
             font-size: 75px;
             margin: 10%;
         }
@@ -38,35 +36,40 @@
         </button>
     </div>
     <script defer>
-        vex.defaultOptions.className = 'vex-theme-default'
-
         function openModal() {
+            vex.defaultOptions.className = 'vex-theme-default'
+
             vex.open({
-                unsafeContent: ['<h2>',
+                unsafeContent: ['<div class="roseModal">',
+                    '<h2>',
                     'How has your experience been with Rose Academies?',
                     '</h2>',
                     '<br />',
                     '<p>',
                     '<span class="ratingBtn" id="nope">😑</span>',
                     '<span class="ratingBtn" id="yup">🤩</span>',
-                    '</p>'
+                    '</p>',
+                    '</div>'
                 ].join('')
             });
         };
 
         function chooseSchool() {
+            vex.closeAll();
             vex.open({
-                unsafeContent: ['<h2>',
+                unsafeContent: ['<div class="roseModal">',
+                    '<h2>',
                     "We'd love to hear your experience!",
                     '</h2>',
                     '<h4>',
                     'Which Rose location did you attend most recently?',
                     '</h4>',
-                    '<p class="schoolOpt" id="CRA"><a href="https://tinyurl.com/canyonrose" target="_blank" rel="noopener">Canyon Rose</a></p>',
-                    '<p class="schoolOpt" id="CRAE"><a href="https://tinyurl.com/canyonroseeast" target="_blank" rel="noopener">Canyon Rose East</a></p>',
-                    '<p class="schoolOpt" id="DRA"><a href="https://tinyurl.com/desertroseaz" target="_blank" rel="noopener">Desert Rose</a></p>',
-                    '<p class="schoolOpt" id="MRA"><a href="https://tinyurl.com/mountainroseaz" target="_blank" rel="noopener">Mountain Rose </a></p>',
-                    '<p class="schoolOpt" id="PRA"><a href="https://tinyurl.com/pimarose" target="_blank" rel="noopener">Pima Rose</a></p>'
+                    '<p class="schoolOpt" id="CRA"><a href="https://shorturl.at/stwIQ" target="_blank" rel="noopener">Canyon Rose</a></p>',
+                    '<p class="schoolOpt" id="CRAE"><a href="https://shorturl.at/BEMT5" target="_blank" rel="noopener">Canyon Rose East</a></p>',
+                    '<p class="schoolOpt" id="DRA"><a href="https://shorturl.at/fJO03" target="_blank" rel="noopener">Desert Rose</a></p>',
+                    '<p class="schoolOpt" id="MRA"><a href="https://shorturl.at/gmnHR" target="_blank" rel="noopener">Mountain Rose </a></p>',
+                    '<p class="schoolOpt" id="PRA"><a href="https://shorturl.at/buCIM" target="_blank" rel="noopener">Pima Rose</a></p>',
+                    '</div>'
                 ].join('')
             });
         }
