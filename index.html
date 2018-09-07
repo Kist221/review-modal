@@ -19,33 +19,42 @@
 <body>
     <h1>Starting out...</h1>
     <div>
-        <div class="returned">
-            need a button
+        <div id="clickMe">
+            Feedback Button
         </div>
     </div>
     <script>
-        vex.open({
-            unsafeContent: ['Happy?',
-                '<br />',
-                '<span id="nope">:/</span>',
-                '<span id="yup">:D</span>',
-            ].join(''),
-            showCloseButton: true,
-            escapeButtonCloses: true,
-            overlayClosesOnClick: true,
-            callback: function (data) {
-                if (!data) {
-                    return console.log('Cancelled')
+        function openModal() {
+            vex.open({
+                unsafeContent: ['<div>',
+                    'Happy?',
+                    '</div>',
+                    '<br />',
+                    '<div style="text-align: center;">',
+                    '<span style="font-size: 75px; margin: 10%;" id="nope">😑</span>',
+                    '<span style="font-size: 75px; margin: 10%;" id="yup">🤩</span>',
+                    '</div>'
+                ].join(''),
+                showCloseButton: true,
+                escapeButtonCloses: true,
+                overlayClosesOnClick: true,
+                callback: function (data) {
+                    if (!data) {
+                        return console.log('Cancelled')
+                    }
+                    console.log(data)
+                    $('.returned').show().html([
+                        '<h4>Result</h4>',
+                        '<p>',
+                        '<b>' + data + '</b><br/>',
+                        '</p>'
+                    ].join(''))
                 }
-                console.log(data)
-                $('.returned').show().html([
-                    '<h4>Result</h4>',
-                    '<p>',
-                    '<b>' + data + '</b><br/>',
-                    '</p>'
-                ].join(''))
-            }
-        })
+            })
+        };
+
+        $('#clickMe').click(openModal);
+        
     </script>
 </body>
 
