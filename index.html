@@ -37,19 +37,7 @@
                 ].join(''),
                 showCloseButton: true,
                 escapeButtonCloses: true,
-                overlayClosesOnClick: true,
-                callback: function (data) {
-                    if (!data) {
-                        return console.log('Cancelled')
-                    }
-                    console.log(data)
-                    $('.returned').show().html([
-                        '<h4>Result</h4>',
-                        '<p>',
-                        '<b>' + data + '</b><br/>',
-                        '</p>'
-                    ].join(''))
-                }
+                overlayClosesOnClick: true
             })
         };
 
