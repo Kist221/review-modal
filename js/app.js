@@ -1,3 +1,13 @@
+const locations = {
+    CRA: 'https://shorturl.at/stwIQ',
+    CRAE: 'https://shorturl.at/BEMT5',
+    DRA: 'https://shorturl.at/fJO03',
+    MRA: 'https://shorturl.at/gmnHR',
+    PRA: 'https://shorturl.at/buCIM'
+}
+
+console.log(locations);
+
 function openModal() {
     vex.defaultOptions.className = 'vex-theme-default'
 
@@ -26,11 +36,11 @@ function chooseSchool() {
             '<h4>',
             'Which Rose location did you attend most recently?',
             '</h4>',
-            '<p class="schoolOpt" id="CRA"><a href="https://shorturl.at/stwIQ" target="_blank" rel="noopener">Canyon Rose</a></p>',
-            '<p class="schoolOpt" id="CRAE"><a href="https://shorturl.at/BEMT5" target="_blank" rel="noopener">Canyon Rose East</a></p>',
-            '<p class="schoolOpt" id="DRA"><a href="https://shorturl.at/fJO03" target="_blank" rel="noopener">Desert Rose</a></p>',
-            '<p class="schoolOpt" id="MRA"><a href="https://shorturl.at/gmnHR" target="_blank" rel="noopener">Mountain Rose </a></p>',
-            '<p class="schoolOpt" id="PRA"><a href="https://shorturl.at/buCIM" target="_blank" rel="noopener">Pima Rose</a></p>',
+            '<p class="schoolOpt" id="CRA"><a href="' + locations.CRA + '" target="_blank" rel="noopener">Canyon Rose</a></p>',
+            '<p class="schoolOpt" id="CRAE"><a href="' + locations.CRAE + '" target="_blank" rel="noopener">Canyon Rose East</a></p>',
+            '<p class="schoolOpt" id="DRA"><a href="' + locations.DRA + '" target="_blank" rel="noopener">Desert Rose</a></p>',
+            '<p class="schoolOpt" id="MRA"><a href="' + locations.MRA + '" target="_blank" rel="noopener">Mountain Rose </a></p>',
+            '<p class="schoolOpt" id="PRA"><a href="' + locations.PRA + '" target="_blank" rel="noopener">Pima Rose</a></p>',
             '</div>'
         ].join('')
     });
