@@ -6,8 +6,6 @@ const locations = {
     PRA: 'https://shorturl.at/buCIM'
 }
 
-console.log(locations);
-
 function openModal() {
     vex.defaultOptions.className = 'vex-theme-default'
 
