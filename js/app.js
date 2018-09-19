@@ -11,9 +11,8 @@ const locations = {
     PRA: 'https://shorturl.at/buCIM'
 }
 
-function openModal() {
+function initFeedback() {
     vex.defaultOptions.className = 'vex-theme-default'
-
     vex.open({
         unsafeContent: ['<div class="myModal">',
             '<h2>',
@@ -29,7 +28,7 @@ function openModal() {
     });
 };
 
-function chooseLocation() {
+function goodFeedback() {
     vex.closeAll();
     vex.open({
         unsafeContent: ['<div class="myModal">',
@@ -49,9 +48,7 @@ function chooseLocation() {
     });
 }
 
-$('body').on('click', '#clickMe', openModal);
-
-function badExperience() {
+function badFeedback() {
     vex.closeAll();
     vex.open({
         unsafeContent: ['<div class="myModal">',
@@ -68,5 +65,6 @@ function badExperience() {
     });
 }
 
-$('body').on('click', '#nope', badExperience);
-$('body').on('click', '#yup', chooseLocation);
+$('body').on('click', '#clickMe', initFeedback);
+$('body').on('click', '#nope', badFeedback);
+$('body').on('click', '#yup', goodFeedback);
