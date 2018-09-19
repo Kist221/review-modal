@@ -1,13 +1,13 @@
-.roseModal {
+.myModal {
     text-align: center;
 }
 
-.roseModal .schoolOpt a {
+.myModal .myOpt a {
     text-decoration: none;
     color: red;
 }
 
-.roseModal .ratingBtn {
+.myModal .ratingBtn {
     font-size: 75px;
     margin: 10%;
 }

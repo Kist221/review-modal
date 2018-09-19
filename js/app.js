@@ -1,3 +1,8 @@
+const contact = {
+    phone: 5207974884,
+    email: 'contactus@rosemanagement.com'
+}
+
 const locations = {
     CRA: 'https://shorturl.at/stwIQ',
     CRAE: 'https://shorturl.at/BEMT5',
@@ -10,7 +15,7 @@ function openModal() {
     vex.defaultOptions.className = 'vex-theme-default'
 
     vex.open({
-        unsafeContent: ['<div class="roseModal">',
+        unsafeContent: ['<div class="myModal">',
             '<h2>',
             'How has your experience been with Rose Academies?',
             '</h2>',
@@ -24,21 +29,21 @@ function openModal() {
     });
 };
 
-function chooseSchool() {
+function chooseLocation() {
     vex.closeAll();
     vex.open({
-        unsafeContent: ['<div class="roseModal">',
+        unsafeContent: ['<div class="myModal">',
             '<h2>',
             "We'd love to hear your experience!",
             '</h2>',
             '<h4>',
             'Which Rose location did you attend most recently?',
             '</h4>',
-            '<p class="schoolOpt" id="CRA"><a href="' + locations.CRA + '" target="_blank" rel="noopener">Canyon Rose</a></p>',
-            '<p class="schoolOpt" id="CRAE"><a href="' + locations.CRAE + '" target="_blank" rel="noopener">Canyon Rose East</a></p>',
-            '<p class="schoolOpt" id="DRA"><a href="' + locations.DRA + '" target="_blank" rel="noopener">Desert Rose</a></p>',
-            '<p class="schoolOpt" id="MRA"><a href="' + locations.MRA + '" target="_blank" rel="noopener">Mountain Rose </a></p>',
-            '<p class="schoolOpt" id="PRA"><a href="' + locations.PRA + '" target="_blank" rel="noopener">Pima Rose</a></p>',
+            '<p class="myOpt" id="CRA"><a href="' + locations.CRA + '" target="_blank" rel="noopener">Canyon Rose</a></p>',
+            '<p class="myOpt" id="CRAE"><a href="' + locations.CRAE + '" target="_blank" rel="noopener">Canyon Rose East</a></p>',
+            '<p class="myOpt" id="DRA"><a href="' + locations.DRA + '" target="_blank" rel="noopener">Desert Rose</a></p>',
+            '<p class="myOpt" id="MRA"><a href="' + locations.MRA + '" target="_blank" rel="noopener">Mountain Rose </a></p>',
+            '<p class="myOpt" id="PRA"><a href="' + locations.PRA + '" target="_blank" rel="noopener">Pima Rose</a></p>',
             '</div>'
         ].join('')
     });
@@ -46,22 +51,22 @@ function chooseSchool() {
 
 $('body').on('click', '#clickMe', openModal);
 
-function bad() {
+function badExperience() {
     vex.closeAll();
     vex.open({
-        unsafeContent: ['<div class="roseModal">',
+        unsafeContent: ['<div class="myModal">',
             '<h2>',
             "OH NO! 😢",
             '</h2>',
             '<h4>',
             'Would you be willing to share your thoughts on how we can improve?',
             '</h4>',
-            '<p class="schoolOpt"><a href="tel:520.797.4884">Call Now</a></p>',
-            '<p class="schoolOpt"><a href="mailto:contactus@rosemanagement.com">Message Us</a></p>',
+            '<p class="myOpt"><a href="tel:' + contact.phone + '">Call Now</a></p>',
+            '<p class="myOpt"><a href="mailto:' + contact.email + '">Message Us</a></p>',
             '</div>'
         ].join('')
     });
 }
 
-$('body').on('click', '#nope', bad);
-$('body').on('click', '#yup', chooseSchool);
+$('body').on('click', '#nope', badExperience);
+$('body').on('click', '#yup', chooseLocation);
