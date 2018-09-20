@@ -1,14 +1,35 @@
-const contact = {
+const info = {
+    bizName: 'Rose Academies',
     phone: 5207974884,
     email: 'contactus@rosemanagement.com'
 }
 
-const locations = {
-    CRA: 'https://shorturl.at/stwIQ',
-    CRAE: 'https://shorturl.at/BEMT5',
-    DRA: 'https://shorturl.at/fJO03',
-    MRA: 'https://shorturl.at/gmnHR',
-    PRA: 'https://shorturl.at/buCIM'
+const links = {
+    CRA: {
+        facebook: '',
+        google: 'https://shorturl.at/stwIQ',
+        yelp: ''
+    },
+    CRAE: {
+        facebook: '',
+        google: 'https://shorturl.at/BEMT5',
+        yelp: ''
+    },
+    DRA: {
+        facebook: '',
+        google: 'https://shorturl.at/fJO03',
+        yelp: ''
+    },
+    MRA: {
+        facebook: '',
+        google: 'https://shorturl.at/gmnHR',
+        yelp: ''
+    },
+    PRA: {
+        facebook: '',
+        google: 'https://shorturl.at/buCIM',
+        yelp: ''
+    }
 }
 
 function initFeedback() {
@@ -38,11 +59,11 @@ function goodFeedback() {
             '<h4>',
             'Which Rose location did you attend most recently?',
             '</h4>',
-            '<p class="myOpt" id="CRA"><a href="' + locations.CRA + '" target="_blank" rel="noopener">Canyon Rose</a></p>',
-            '<p class="myOpt" id="CRAE"><a href="' + locations.CRAE + '" target="_blank" rel="noopener">Canyon Rose East</a></p>',
-            '<p class="myOpt" id="DRA"><a href="' + locations.DRA + '" target="_blank" rel="noopener">Desert Rose</a></p>',
-            '<p class="myOpt" id="MRA"><a href="' + locations.MRA + '" target="_blank" rel="noopener">Mountain Rose </a></p>',
-            '<p class="myOpt" id="PRA"><a href="' + locations.PRA + '" target="_blank" rel="noopener">Pima Rose</a></p>',
+            '<p class="myOpt" id="CRA"><a href="' + links.CRA.google + '" target="_blank" rel="noopener">Canyon Rose</a></p>',
+            '<p class="myOpt" id="CRAE"><a href="' + links.CRAE.google + '" target="_blank" rel="noopener">Canyon Rose East</a></p>',
+            '<p class="myOpt" id="DRA"><a href="' + links.DRA.google + '" target="_blank" rel="noopener">Desert Rose</a></p>',
+            '<p class="myOpt" id="MRA"><a href="' + links.MRA.google + '" target="_blank" rel="noopener">Mountain Rose </a></p>',
+            '<p class="myOpt" id="PRA"><a href="' + links.PRA.google + '" target="_blank" rel="noopener">Pima Rose</a></p>',
             '</div>'
         ].join('')
     });
@@ -58,8 +79,8 @@ function badFeedback() {
             '<h4>',
             'Would you be willing to share your thoughts on how we can improve?',
             '</h4>',
-            '<p class="myOpt"><a href="tel:' + contact.phone + '">Call Now</a></p>',
-            '<p class="myOpt"><a href="mailto:' + contact.email + '">Message Us</a></p>',
+            '<p class="myOpt"><a href="tel:' + info.phone + '">Call Now</a></p>',
+            '<p class="myOpt"><a href="mailto:' + info.email + '">Message Us</a></p>',
             '</div>'
         ].join('')
     });
@@ -68,3 +89,6 @@ function badFeedback() {
 $('body').on('click', '#clickMe', initFeedback);
 $('body').on('click', '#nope', badFeedback);
 $('body').on('click', '#yup', goodFeedback);
+$('body').on('click', '.myOpt', function(e){
+    console.log(this.id);
+});
