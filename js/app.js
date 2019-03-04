@@ -33,16 +33,16 @@ const links = {
 }
 
 function initFeedback() {
-    vex.defaultOptions.className = 'vex-theme-default'
+    vex.defaultOptions.className = 'vex-theme-default';
     vex.open({
         unsafeContent: ['<div class="myModal">',
             '<h2>',
-            'How has your experience been with Rose Academies?',
+            'How has your experience been with ' + info.bizName + '?',
             '</h2>',
             '<br />',
-            '<p>',
-            '<span class="ratingBtn" id="yup">😀</span>',
-            '<span class="ratingBtn" id="nope">😑</span>',
+            '<p style="font-size: 75px;">',
+            '<span class="ratingBtn" id="yup" style="margin: 10%;">😀</span>',
+            '<span class="ratingBtn" id="nope" style="margin: 10%;">😑</span>',
             '</p>',
             '</div>'
         ].join('')
@@ -86,9 +86,9 @@ function badFeedback() {
     });
 }
 
-$('body').on('click', '#clickMe', initFeedback);
-$('body').on('click', '#nope', badFeedback);
-$('body').on('click', '#yup', goodFeedback);
-$('body').on('click', '.myOpt', function(e){
+jQuery('body').on('click', '#clickMe', initFeedback);
+jQuery('body').on('click', '#nope', badFeedback);
+jQuery('body').on('click', '#yup', goodFeedback);
+jQuery('body').on('click', '.myOpt', function(e){
     console.log(this.id);
 });
