@@ -1,35 +1,13 @@
 const info = {
-    bizName: 'Rose Academies',
-    phone: 5207974884,
-    email: 'contactus@rosemanagement.com'
+    bizName: 'Compass High School',
+    phone: 5202964070,
+    email: 'Info@compasshighschool.com'
 }
 
 const links = {
-    CRA: {
-        facebook: '',
-        google: 'https://shorturl.at/stwIQ',
-        yelp: ''
-    },
-    CRAE: {
-        facebook: '',
-        google: 'https://shorturl.at/BEMT5',
-        yelp: ''
-    },
-    DRA: {
-        facebook: '',
-        google: 'https://shorturl.at/fJO03',
-        yelp: ''
-    },
-    MRA: {
-        facebook: '',
-        google: 'https://shorturl.at/gmnHR',
-        yelp: ''
-    },
-    PRA: {
-        facebook: '',
-        google: 'https://shorturl.at/buCIM',
-        yelp: ''
-    }
+    facebook: '',
+    google: 'g.page/compasshigh/review',
+    yelp: ''
 }
 
 function initFeedback() {
@@ -57,13 +35,11 @@ function goodFeedback() {
             "We'd love to hear your experience!",
             '</h2>',
             '<h4>',
-            'Which Rose location did you attend most recently?',
+            'Would you mind sharing your experience?',
             '</h4>',
-            '<p class="myOpt" id="CRA"><a href="' + links.CRA.google + '" target="_blank" rel="noopener">Canyon Rose</a></p>',
-            '<p class="myOpt" id="CRAE"><a href="' + links.CRAE.google + '" target="_blank" rel="noopener">Canyon Rose East</a></p>',
-            '<p class="myOpt" id="DRA"><a href="' + links.DRA.google + '" target="_blank" rel="noopener">Desert Rose</a></p>',
-            '<p class="myOpt" id="MRA"><a href="' + links.MRA.google + '" target="_blank" rel="noopener">Mountain Rose </a></p>',
-            '<p class="myOpt" id="PRA"><a href="' + links.PRA.google + '" target="_blank" rel="noopener">Pima Rose</a></p>',
+            '<p class="myOpt" id="fbOpt"><a href="' + links.facebook + '" target="_blank" rel="noopener">Facebook</a></p>',
+            '<p class="myOpt" id="gooOpt"><a href="' + links.google + '" target="_blank" rel="noopener">Google</a></p>',
+            '<p class="myOpt" id="yelpOpt"><a href="' + links.yelp + '" target="_blank" rel="noopener">Yelp</a></p>',
             '</div>'
         ].join('')
     });
@@ -89,6 +65,6 @@ function badFeedback() {
 jQuery('body').on('click', '#clickMe', initFeedback);
 jQuery('body').on('click', '#nope', badFeedback);
 jQuery('body').on('click', '#yup', goodFeedback);
-jQuery('body').on('click', '.myOpt', function(e){
+jQuery('body').on('click', '.myOpt', function (e) {
     console.log(this.id);
 });
