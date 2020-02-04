@@ -37,9 +37,9 @@ function goodFeedback() {
             '<h4>',
             'Would you mind sharing your experience?',
             '</h4>',
-            '<p class="myOpt" id="fbOpt"><a href="' + links.facebook + '" target="_blank" rel="noopener">Facebook</a></p>',
-            '<p class="myOpt" id="gooOpt"><a href="' + links.google + '" target="_blank" rel="noopener">Google</a></p>',
-            '<p class="myOpt" id="yelpOpt"><a href="' + links.yelp + '" target="_blank" rel="noopener">Yelp</a></p>',
+            '<p><button class="myOpt" id="fbOpt"><a href="' + links.facebook + '" target="_blank" rel="noopener">Facebook</a></button></p>',
+            '<p><button class="myOpt" id="gooOpt"><a href="' + links.google + '" target="_blank" rel="noopener">Google</a></button></p>',
+            '<p><button class="myOpt" id="yelpOpt"><a href="' + links.yelp + '" target="_blank" rel="noopener">Yelp</a></button></p>',
             '</div>'
         ].join('')
     });

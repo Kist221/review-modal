@@ -2,9 +2,18 @@
     text-align: center;
 }
 
-.myModal .myOpt a {
+.myModal button, .myModal a {
     text-decoration: none;
-    color: #a3d600;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #00adef;
+    color: #000;
+}
+
+.myModal button:hover, .myModal a:hover {
+    background-color: #a3d600;
+    color: #fff;
 }
 
 .myModal .ratingBtn {
