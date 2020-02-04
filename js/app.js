@@ -5,9 +5,9 @@ const info = {
 }
 
 const links = {
-    facebook: '',
-    google: 'g.page/compasshigh/review',
-    yelp: ''
+    facebook: 'https://www.facebook.com/pg/CompassHS/reviews/',
+    google: 'https://g.page/CompassHighSchool/review?rc',
+    yelp: 'https://www.yelp.com/writeareview/biz/8wAnaBeatOLDj_apzrFMzQ'
 }
 
 function initFeedback() {
