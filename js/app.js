@@ -1,5 +1,5 @@
 const info = {
-    bizName: 'Compass High School',
+    name: 'Compass High School',
     phone: 5202964070,
     email: 'Info@compasshighschool.com'
 }
@@ -15,7 +15,7 @@ function initFeedback() {
     vex.open({
         unsafeContent: ['<div class="myModal">',
             '<h2>',
-            'How has your experience been with ' + info.bizName + '?',
+            'How has your experience been with ' + info.name + '?',
             '</h2>',
             '<br />',
             '<p style="font-size: 75px;">',
